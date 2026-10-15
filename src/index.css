@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f291e;
+    background-color: #f6f8f6;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f6f8f6;
+    color: #0f291e;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes waterStream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.25;
+  }
+}
+
+@keyframes dropletFall {
+  0% {
+    transform: translateY(-6px) scale(0.85);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px) scale(1);
+    opacity: 0;
+  }
+}
+
+.animate-water-stream {
+  animation: waterStream 1.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-droplet-1 {
+  animation: dropletFall 1.1s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.animate-droplet-2 {
+  animation: dropletFall 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s infinite;
+}
+
+.animate-droplet-3 {
+  animation: dropletFall 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-water-stream,
+  .animate-droplet-1,
+  .animate-droplet-2,
+  .animate-droplet-3 {
+    animation: none;
+  }
+}
+
+input[type="range"] {
+  accent-color: #1b4d3e;
+}
